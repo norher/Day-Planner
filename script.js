@@ -28,27 +28,31 @@ function colorAssigner() {
     })
 };
 
-$(".saveBtn").onclick = function () {
+$("button").click(function() {
     // console.log("button works");
-    //target local storage elements
-    var value = $(this).parent().siblings(".description").val();
-    var time = $(this).parent().parent().attr("id");
+    // target local storage elements
+    var time = $(this).siblings(".hour").text();
+    var description = $(this).siblings(".description").val();
     
     // save in localStorage
-    localStorage.setItem(time, value);
-};
+    localStorage.setItem(time, description);
+});
 
 
 init();
 
 function getTasks() {
-    $("#hour-9 .description").val(localStorage.getItem("hour-9"));
-$("#hour-10 .description").val(localStorage.getItem("hour-10"));
-$("#hour-11 .description").val(localStorage.getItem("hour-11"));
-$("#hour-12 .description").val(localStorage.getItem("hour-12"));
-$("#hour-13 .description").val(localStorage.getItem("hour-13"));
-$("#hour-14 .description").val(localStorage.getItem("hour-14"));
-$("#hour-15 .description").val(localStorage.getItem("hour-15"));
-$("#hour-16 .description").val(localStorage.getItem("hour-16"));
-$("#hour-17 .description").val(localStorage.getItem("hour-17"));
+    $("#8th .description").val(localStorage.getItem("8AM"));
+    $("#9th .description").val(localStorage.getItem("9AM"));
+    $("#10th .description").val(localStorage.getItem("10AM"));
+    $("#11th .description").val(localStorage.getItem("11AM"));
+    $("#12th .description").val(localStorage.getItem("12PM"));
+    $("#13th .description").val(localStorage.getItem("1PM"));
+    $("#14th .description").val(localStorage.getItem("2PM"));
+    $("#15th .description").val(localStorage.getItem("3PM"));
+    $("#16th .description").val(localStorage.getItem("4PM"));
+    $("#17th .description").val(localStorage.getItem("5PM"));
+    $("#18th .description").val(localStorage.getItem("6PM"));
+    $("#19th .description").val(localStorage.getItem("7PM"));
+    $("#20th .description").val(localStorage.getItem("8PM"));
 }
