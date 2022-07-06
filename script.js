@@ -28,7 +28,7 @@ function colorAssigner() {
     })
 };
 
-$("button").click(function() {
+$(".saveBtn").click(function() {
     // console.log("button works");
     // target local storage elements
     var time = $(this).siblings(".hour").text();
@@ -39,7 +39,6 @@ $("button").click(function() {
 });
 
 
-init();
 
 function getTasks() {
     $("#8th .description").val(localStorage.getItem("8AM"));
@@ -55,4 +54,9 @@ function getTasks() {
     $("#18th .description").val(localStorage.getItem("6PM"));
     $("#19th .description").val(localStorage.getItem("7PM"));
     $("#20th .description").val(localStorage.getItem("8PM"));
-}
+};
+
+$("#newDay").click(function() {
+    localStorage.clear();
+})
+init();
